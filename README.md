@@ -12,6 +12,9 @@ just post a message
 
 
 
+can see the queues,producer,consumer
+http://127.0.0.1:8161/console/
+
 
 
 
