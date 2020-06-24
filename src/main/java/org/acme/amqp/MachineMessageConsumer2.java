@@ -6,12 +6,12 @@ import org.eclipse.microprofile.reactive.messaging.Incoming;
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class MachineMessageConsumer {
+public class MachineMessageConsumer2 {
 
     @Incoming("ops")
     @Merge
     public void processMessage(String message) {
-        System.out.println(MachineMessageConsumer.class +  " MESSAGE RECU = " + message);
+        System.out.println(MachineMessageConsumer2.class +  " MESSAGE RECU = " + message);
     }
 
 }

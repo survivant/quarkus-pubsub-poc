@@ -1,5 +1,6 @@
 package org.acme.amqp;
 
+import io.smallrye.reactive.messaging.annotations.Broadcast;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 
@@ -14,9 +15,17 @@ public class MachineMessageProducer {
 
     @Incoming("codec")
     @Outgoing("ops")
-    //@Broadcast
+    @Broadcast
     public String handleMessage(String message){
-        System.out.println("MachineMessageProducer received " + message);
+        System.out.println("MachineMessageProducer handleMessage received " + message);
+        return message;
+    }
+
+    @Incoming("internal-codec")
+    @Outgoing("codec")
+    @Broadcast
+    public String dispatch(String message) {
+        System.out.println("MachineMessageProducer dispatch received " + message);
         return message;
     }
 

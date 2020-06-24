@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 public class MachineCodecResource {
 
     @Inject
-    @Channel("codec")
+    @Channel("internal-codec")
     Emitter<String> emitter;
 
     @POST
